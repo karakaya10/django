@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="card mt-5 mb-3 p-0">
+            <img src="{{ post.image.url }}" class="card-img-top p-0 m-0 rounded-0">
+            <div class="card-footer text-center"><small class="text-muted"><span class="align-middle align-center"><i class="bi bi-calendar"></i> {{post.date |date:"F d, Y"}} <i class="bi bi-person-circle"></i> {{post.author}}</span></small></div>
+            <div class="card-body">
+              <p class="card-title fs-2 text-center text-warning bg-dark">{{post.title}}</p>
+              <p class="card-text">{{post.content|safe}}</p>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endblock %}
